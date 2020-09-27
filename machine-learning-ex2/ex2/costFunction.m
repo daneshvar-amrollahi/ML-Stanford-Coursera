@@ -25,7 +25,7 @@ n = size(theta) - 1; #features
 for j = 1: n + 1,
   sum = 0;
   for i = 1: m,
-     sum = sum + sigmoid(theta' * (X(i, :))');
+     sum = sum + (sigmoid(theta' * (X(i, :))') - y(i)) * X(i, j);
   endfor
   grad(j) = sum / m;
   
