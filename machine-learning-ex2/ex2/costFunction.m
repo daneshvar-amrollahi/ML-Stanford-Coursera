@@ -21,11 +21,22 @@ grad = zeros(size(theta));
 %
 
 
+n = size(theta) - 1; #features
+for j = 1: n + 1,
+  sum = 0;
+  for i = 1: m,
+     sum = sum + sigmoid(theta' * (X(i, :))');
+  endfor
+  grad(j) = sum / m;
+  
+endfor
 
 
+for i = 1: m,
+  J += -y(i) * log(sigmoid(theta' * (X(i, :))')) - (1 - y(i)) * log(1 - sigmoid(theta' * (X(i, :))'));
+endfor
 
-
-
+J = (1 / m) * J;
 
 % =============================================================
 
