@@ -22,11 +22,19 @@ p = zeros(size(X, 1), 1);
 %
 
 
+X = [ones(m, 1) X];
 
 
+a = sigmoid(Theta1 * X'); %activations in hidden layer
 
+a = [ones(1, m); a];
 
+h = Theta2 * a;
 
+for i = 1: m,
+  [val, idx] = max(h(:, i));
+  p(i) = idx;
+endfor
 
 
 % =========================================================================
