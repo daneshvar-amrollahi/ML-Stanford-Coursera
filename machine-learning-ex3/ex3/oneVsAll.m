@@ -49,11 +49,11 @@ X = [ones(m, 1) X];
 %                 initial_theta, options);
 %
 
-display(size(all_theta));
-display(size(X));
-display(size(y));
-display(n);
-display(m);
+%display(size(all_theta));
+%display(size(X));
+%display(size(y));
+%display(n);
+%display(m);
 
 display(num_labels);
 
