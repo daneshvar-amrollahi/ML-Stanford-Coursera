@@ -59,6 +59,22 @@ endfor
 
 J /= m;
 
+reg = 0;
+for j = 1: hidden_layer_size,
+  for k = 2: input_layer_size + 1,
+    reg += (Theta1(j, k) ^ 2);
+  endfor
+endfor
+
+for j = 1: num_labels,
+  for k = 2: hidden_layer_size + 1,
+    reg += (Theta2(j, k) ^ 2);
+  endfor
+endfor
+
+J += (lambda / (2 * m)) * reg;
+
+
 %
 % Part 2: Implement the backpropagation algorithm to compute the gradients
 %         Theta1_grad and Theta2_grad. You should return the partial derivatives of
