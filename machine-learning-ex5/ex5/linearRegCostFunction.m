@@ -20,13 +20,14 @@ grad = zeros(size(theta));
 %
 
 
+h = X * theta; 
 
+theta_reg = [0;theta(2:end, :);]; %remove first element and set it to 0
+J = (1 / (2*m)) * sum((h - y).^2) + (lambda / (2*m)) * (sum(theta_reg.^2));
 
+ 
 
-
-
-
-
+grad = (1 / m) * ( X' * (h - y) ) + (lambda / m) * (theta_reg);
 
 
 
