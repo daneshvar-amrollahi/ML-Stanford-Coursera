@@ -97,6 +97,7 @@ fprintf('Program paused. Press enter to continue.\n');
 pause;
 
 
+
 %% =========== Part 5: Learning Curve for Linear Regression =============
 %  Next, you should implement the learningCurve function. 
 %
@@ -156,7 +157,6 @@ fprintf('\nProgram paused. Press enter to continue.\n');
 pause;
 
 
-
 %% =========== Part 7: Learning Curve for Polynomial Regression =============
 %  Now, you will get to experiment with polynomial regression with multiple
 %  values of lambda. The code below runs polynomial regression with 
@@ -174,7 +174,7 @@ plotFit(min(X), max(X), mu, sigma, theta, p);
 xlabel('Change in water level (x)');
 ylabel('Water flowing out of the dam (y)');
 title (sprintf('Polynomial Regression Fit (lambda = %f)', lambda));
-
+return;
 figure(2);
 [error_train, error_val] = ...
     learningCurve(X_poly, y, X_poly_val, yval, lambda);
