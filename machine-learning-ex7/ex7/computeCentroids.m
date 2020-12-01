@@ -26,8 +26,12 @@ centroids = zeros(K, n);
 % Note: You can use a for-loop over the centroids to compute this.
 %
 
+cnt = zeros(K);
 
-
+for i = 1: K,
+  idx_i = find(idx == i); #features that are assigned to centroid i
+  centroids(i, :) = sum(X(idx_i, :)) / length(idx_i); 
+endfor
 
 
 
